@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation with Forms</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="title">DOM Manipulation with Forms</h1>
+    <p id="description">Fetch the form data and insert the data into the table below</p>
+    <div class="container col-lg-8 col-md-6 col-sm-12 mt-1 form-div">
+        <form id="form">
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-4 pt-4">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" class="form-control" placeholder="Enter your first name here" required>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-4">
+                <label for="last-name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter your last name here" id="last-name" required>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-4">
+                <label for="address">Address</label> <br>
+                <textarea class="form-control" name="address" id="address" cols="30" rows="5" placeholder="Enter your address here"></textarea>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <label for="pincode">Pincode</label>
+                <input type="text" class="form-control" placeholder="Enter your pincode here" id="pincode" pattern="[0-9]{6}" maxlength="6" title="6 digit pincode" required>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <label for="gender">Gender</label>
+                <div>
+                    <input type="radio" class="form-content-input" value="Male" name="gender">
+                    <label for="male" class="form-content-label">Male</label>
+                    &nbsp; &nbsp; &nbsp;
+                    <input type="radio" class="form-content-input" value="Female" name="gender">
+                    <label for="female" class="form-content-label">Female</label>
+                    &nbsp; &nbsp; &nbsp;
+                    <input type="radio" class="form-content-input" value="Others" name="gender">
+                    <label for="fothers" class="form-content-label">Others</label>
+                </div>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <label for="food">Choice of food</label>
+                <div>
+                    <input type="checkbox" class="form-content-input checks" value="Indian">
+                    <label for="indian" class="form-content-label">Indian</label> <br>
+                    <input type="checkbox" class="form-content-input checks" value="Italian">
+                    <label for="indian" class="form-content-label">Italian</label> <br>
+                    <input type="checkbox" class="form-content-input checks" value="Thai">
+                    <label for="indian" class="form-content-label">Thai</label> <br>
+                    <input type="checkbox" class="form-content-input checks" value="Chinese">
+                    <label for="indian" class="form-content-label">Chinese</label> <br>
+                    <input type="checkbox" class="form-content-input checks" value="Mexican">
+                    <label for="indian" class="form-content-label">Mexican</label> <br>
+                </div>
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <label for="state">State</label>
+                <input type="text" class="form-control" placeholder="Enter your state" id="state">
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" placeholder="Enter your country" id="country">
+            </div>
+            <div class="form-group col-xs-7 col-sm-7 col-md-7 pb-3">
+                <button type="button" class="btn btn-primary" id="submit" onclick="fetch()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container col-sm-12 col-md-7 my-5">
+        <table class="table table-responsive-md" id="table-main">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
